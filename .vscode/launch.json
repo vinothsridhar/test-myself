@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProducerConsumer",
+            "request": "launch",
+            "mainClass": "in.sri.test.thread.ProducerConsumer",
+            "projectName": "test"
+        }
+    ]
+}
