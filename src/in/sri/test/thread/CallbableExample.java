@@ -6,14 +6,10 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.Semaphore;
 
 public class CallbableExample {
 
     private static ExecutorService es = Executors.newFixedThreadPool(2);
-    
-
-    Semaphore semaphore = new Semaphore(10);
     
     public static void main(String[] args) {
         
