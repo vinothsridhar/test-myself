@@ -6,9 +6,14 @@ public class Main {
         
         WindowService windowService = new WindowService();
         
-        new MaximizeWindowCommand(windowService).execute();
+        Button maximizeButton = new Button();
+        maximizeButton.setCommand(new MaximizeWindowCommand(windowService));
         
-        new MinimizeWindowCommand(windowService).execute();
+        Button minimizeButton = new Button();
+        minimizeButton.setCommand(new MinimizeWindowCommand(windowService));
+
+        maximizeButton.onPress();
+        minimizeButton.onPress();
         
     }
     

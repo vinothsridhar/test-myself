@@ -24,17 +24,11 @@ public class ProducerConsumer {
 
         new Thread(producer).start();
         new Thread(producer).start();
-        
-        try {
-            Thread.sleep(10 * 1000);
-        } catch (InterruptedException e1) {
-            e1.printStackTrace();
-        }
 
         final Runnable consumer = () -> {
             while(true) {
                 Item item = queue.take();
-                System.out.println("consuming value: " + item.getName());
+                System.err.println("consuming value: " + item.getName());
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -43,6 +37,7 @@ public class ProducerConsumer {
             }
         };
 
+        new Thread(consumer).start();
         new Thread(consumer).start();
         new Thread(consumer).start();
 

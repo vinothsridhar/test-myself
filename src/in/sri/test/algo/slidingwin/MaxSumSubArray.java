@@ -1,4 +1,4 @@
-package in.sri.test.algo.singlewin;
+package in.sri.test.algo.slidingwin;
 
 public class MaxSumSubArray {
 
