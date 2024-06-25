@@ -53,3 +53,12 @@ The SOLID principles are a set of five principles for designing and organizing c
 - Abstraction
     - Interfaces and Abstract methods
     - Abstract the implementation details of the class and methods
+
+## Thread States
+
+- NEW (instance created but not yet started)
+- RUNNABLE (start() method called. executing code in the jvm or waiting for processor)
+- BLOCKED (waiting for lock)
+- WAITING (join(), wait() with no time specified)
+- TIMED_WAITING (sleep(), join(), wait() with time specified)
+- TERMINATED (execution completed)
