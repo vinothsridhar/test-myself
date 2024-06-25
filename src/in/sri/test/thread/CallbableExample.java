@@ -9,27 +9,18 @@ import java.util.concurrent.Future;
 
 public class CallbableExample {
 
-    private static ExecutorService es = Executors.newFixedThreadPool(2);
-    
-    public static void main(String[] args) {
-        
-        Future<Integer> f = es.submit(new Task());
-        
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+
         System.out.println("Task submitted");
-        
-        try {
+
+        try (ExecutorService es = Executors.newFixedThreadPool(2)) {
+            Future<Integer> f = es.submit(new Task());
             Integer value = f.get();
             System.out.println("fetched value: " + value);
-            es.shutdown();
-            es.shutdownNow();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
         }
-        
+
     }
-    
+
     private static class Task implements Callable<Integer> {
 
         @Override
@@ -37,6 +28,6 @@ public class CallbableExample {
             Thread.sleep(3000);
             return new Random().nextInt();
         }
-        
+
     }
 }
