@@ -15,6 +15,12 @@ The CAP theorem, also known as Brewer's theorem, is a fundamental principle that
 
 The CAP theorem is significant because it illustrates the tradeoffs that developers must consider when designing distributed systems. They must choose two of these three options to prioritize, and this choice can greatly impact the system's reliability, performance, and overall behavior.
 
+CA: The system prioritizes consistency and availability but doesn't handle network partitions well. In the case of a network partition, it might choose to become unavailable to maintain consistency.
+
+CP: The system prioritizes consistency and partition tolerance but sacrifices availability. In the face of a network partition, it will maintain consistency by refusing some requests.
+
+AP: The system prioritizes availability and partition tolerance but sacrifices strong consistency. It continues to operate and respond to requests even if it means returning stale data or data that is not consistent across all nodes.
+
 ### SOLID Principles
 
 The SOLID principles are a set of five principles for designing and organizing code that makes it more understandable, flexible, and maintainable. They are as follows:
