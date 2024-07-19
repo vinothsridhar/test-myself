@@ -68,3 +68,13 @@ The SOLID principles are a set of five principles for designing and organizing c
 - WAITING (join(), wait() with no time specified)
 - TIMED_WAITING (sleep(), join(), wait() with time specified)
 - TERMINATED (execution completed)
+
+## Normalization
+- 1NF
+     - primary key should be added
+     - mixing column data type should not be
+     - list should not be stored in a column
+- 2NF
+     - Each non-key attribute in the table must be dependent on the entire primary key
+- 3NF
+     - There should not be any transitive dependency between non-key columns
