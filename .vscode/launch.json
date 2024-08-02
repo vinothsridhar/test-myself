@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CompletableFutureDemo",
+            "request": "launch",
+            "mainClass": "in.sri.test.thread.CompletableFutureDemo",
+            "projectName": "test"
+        },
+        {
+            "type": "java",
+            "name": "ThreadJoin",
+            "request": "launch",
+            "mainClass": "in.sri.test.thread.ThreadJoin",
+            "projectName": "test"
+        },
+        {
+            "type": "java",
+            "name": "CountDownLatchExample",
+            "request": "launch",
+            "mainClass": "in.sri.test.thread.CountDownLatchExample",
+            "projectName": "test"
+        },
+        {
+            "type": "java",
+            "name": "CallbableExample",
+            "request": "launch",
+            "mainClass": "in.sri.test.thread.CallbableExample",
+            "projectName": "test"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ProducerConsumer",
             "request": "launch",
             "mainClass": "in.sri.test.thread.ProducerConsumer",
