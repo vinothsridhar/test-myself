@@ -1,3 +1,5 @@
+package in.sri.test.algo2;
+
 public class BSTDemo {
 
     public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class BSTDemo {
         tree.insert(30);
         tree.insert(1);
 
-//        traverseInOrder(tree.root);
+       traversePreOrder(tree.root);
 
         boolean found = search(tree.root, 3);
         System.out.println("Found value: " + found);
@@ -48,6 +50,14 @@ public class BSTDemo {
             traverseInOrder(root.left);
             System.out.print(" " + root.value);
             traverseInOrder(root.right);
+        }
+    }
+
+    static void traverseInReverseOrder(Node root) {
+        if (root != null) {
+            traverseInReverseOrder(root.right);
+            System.out.print(" " + root.value);
+            traverseInReverseOrder(root.left);
         }
     }
 
