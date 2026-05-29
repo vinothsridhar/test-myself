@@ -1,0 +1,4 @@
+- **Atomicity**: When you purchase an item online, say a shirt and a pair of pants, atomicity ensures either both items get added to your order, or none at all. You wouldn't want to pay for a shirt and pants, and only find out the pants aren't available after your card has been charged.
+- **Consistency**: This is like the rules of the store - for example, an item that's out of stock should not be allowed to be added to the cart. The database ensures these rules are always followed.
+- **Isolation**: Imagine many customers are shopping at the same time. Isolation ensures your shopping doesn't affect anyone else's and vice versa. You won't suddenly see someone else's items in your cart!
+- **Durability**: Once you've placed an order, it's there to stay. Even if the site crashes or there's a power cut, your order should still be there when things are back to normal.
