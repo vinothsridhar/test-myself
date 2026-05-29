@@ -66,6 +66,9 @@ interface Workable {
 interface Eatable {
     eat();
 }
+
+class HumanWorker implements Workable, Eatable;
+class RobotWorker implements Workable;
 ```
 **Dependency Inversion Principle** (DIP): The Dependency Inversion Principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions. In Java, this can be achieved by using interfaces or abstract classes, and using dependency injection to provide the concrete implementation.
 ```
