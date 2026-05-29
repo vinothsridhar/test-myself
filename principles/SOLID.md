@@ -16,14 +16,22 @@
   ```
 **Open-Closed Principle** (OCP): The Open-Closed Principle states that classes should be open for extension but closed for modification. In other words, you should be able to add new functionality to a class without changing its existing code. In Java, this can be achieved using interfaces and abstract classes.
   ```
-  //Every new feature requires modifying old code.
-  if(paymentType.equals("CARD"))
+  class PaymentService {
 
-  //Later
-  if(paymentType.equals("UPI"))
+    void pay(PaymentType paymentType) {
+      //validations...
 
-  //Later
-  if(paymentType.equals("PAYPAL"))
+      //Every new feature requires modifying old code.
+      if(paymentType.equals("CARD"))
+    
+      //Later
+      if(paymentType.equals("UPI"))
+    
+      //Later
+      if(paymentType.equals("PAYPAL"))
+    }
+
+  }
 
   //Solution: Allow extension without modification.
   interface PaymentMethod {
@@ -32,6 +40,16 @@
 
   class CardPayment implements PaymentMethod {}
   class UpiPayment implements PaymentMethod {}
+
+  class PaymentService {
+
+    void pay(PaymentMethod paymentMethod) {
+      //validations...
+
+      paymentMethod.pay();
+    }
+
+  }
   ```
 **Liskov Substitution Principle** (LSP): This principle states that subclasses should be substitutable for their base classes without causing errors. If a method expects an instance of a base class, it should be able to work with an instance of any subclass without knowing it.
 ```
