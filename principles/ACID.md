@@ -42,7 +42,9 @@ The system writes it to safe storage so it can survive anything.
 ### Summary
 #### Each property solves one big worry:
 
+```
 Atomicity → No half transfers
 Consistency → Rules never break
 Isolation → Multiple users don't interfere
 Durability → Success means success forever
+```
