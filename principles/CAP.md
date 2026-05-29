@@ -1,0 +1,7 @@
+The CAP theorem, also known as Brewer's theorem, is a fundamental principle that applies to distributed systems. This theorem posits that it's impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees: Consistency, Availability, and Partition Tolerance.
+
+- **Consistency** in this context means that every read from the database receives the most recent write or an error. In a consistent system, any transaction will bring the database from one valid state to another, maintaining the 'global' order of transactions.
+- **Availability** is about ensuring that every request receives a response, without the guarantee that it contains the most recent write. In an available system, the database will always respond to a request (though it may not be the most up-to-date response), and it's designed to ensure uninterrupted service.
+- **Partition Tolerance** refers to the system's ability to continue to operate despite arbitrary partitioning due to network failures. In a partition-tolerant system, the database can be split over multiple servers, and in case of a network failure, it can continue to function even if one or more of the servers are not communicating with the others.
+
+The CAP theorem is significant because it illustrates the tradeoffs that developers must consider when designing distributed systems. They must choose two of these three options to prioritize, and this choice can greatly impact the system's reliability, performance, and overall behavior.
