@@ -84,3 +84,50 @@ public class SolvedLockExample {
 
 ```
 
+## SimpleReadWriteLock with AtomicInteger
+```
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class SimpleReadWriteLock {
+
+    private final AtomicInteger state = new AtomicInteger(0);
+
+    // 0  = unlocked
+    // >0 = reader count
+    // -1 = writer active
+
+    public void readLock() {
+        while (true) {
+            int current = state.get();
+
+            if (current == -1) {
+                continue;
+            }
+
+            if (state.compareAndSet(current, current + 1)) {
+                return;
+            }
+        }
+    }
+
+    public void readUnlock() {
+        int current = state.decrementAndGet();
+
+        if (current < 0) {
+            throw new IllegalStateException("Read unlock without read lock");
+        }
+    }
+
+    public void writeLock() {
+        while (!state.compareAndSet(0, -1)) {
+            // busy wait
+        }
+    }
+
+    public void writeUnlock() {
+        if (!state.compareAndSet(-1, 0)) {
+            throw new IllegalStateException("Write unlock without write lock");
+        }
+    }
+}
+```
