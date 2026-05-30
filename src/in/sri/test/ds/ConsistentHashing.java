@@ -1,6 +1,7 @@
 import java.security.MessageDigest;
 import java.util.*;
 
+//Actual physical server
 class RedisNode {
     String name;
 
