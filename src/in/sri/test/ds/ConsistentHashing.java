@@ -1,9 +1,10 @@
 import java.security.MessageDigest;
 import java.util.*;
 
-//Actual physical server
+//Actual physical server: this may contain ip address
 class RedisNode {
     String name;
+    //String ipAddress;
 
     RedisNode(String name) {
         this.name = name;
